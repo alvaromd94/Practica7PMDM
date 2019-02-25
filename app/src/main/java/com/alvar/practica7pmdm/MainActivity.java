@@ -14,4 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickNuevo(View view) {
     }
+
+    public void clickImagen(View view) {
+    }
 }

@@ -21,6 +21,7 @@
         android:id="@+id/imageView"
         android:layout_width="61dp"
         android:layout_height="40dp"
+        android:onClick="clickImagen"
         android:layout_alignEnd="@+id/spinnerCategoria"
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
