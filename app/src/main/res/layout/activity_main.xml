@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Spinner
-        android:id="@+id/spinnerCategoria"
+        android:id="@+id/spinnerCategorias"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -22,7 +22,7 @@
         android:layout_width="61dp"
         android:layout_height="40dp"
         android:onClick="clickImagen"
-        android:layout_alignEnd="@+id/spinnerCategoria"
+        android:layout_alignEnd="@+id/spinnerCategorias"
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="-68dp"
