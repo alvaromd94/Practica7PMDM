@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.alvar.practica7pmdm.Model.Lugar;
@@ -17,7 +18,7 @@ public class CardAdapter extends ArrayAdapter {
 
     static class CardViewHolder {
         TextView line1;
-        TextView line2;
+        RatingBar ratingBar;
     }
 
     public CardAdapter(Context context, int textViewResourceId) {
@@ -49,12 +50,12 @@ public class CardAdapter extends ArrayAdapter {
 
             CardViewHolder viewHolder = new CardViewHolder();
             viewHolder.line1 = row.findViewById(R.id.line1);
-            viewHolder.line2 = row.findViewById(R.id.line2);
-
+           // viewHolder.line2 = row.findViewById(R.id.line2);
+            viewHolder.ratingBar = row.findViewById(R.id.ratingBar);
 
             Lugar p = getItem(position);
             viewHolder.line1.setText(p.getNombre());
-            viewHolder.line2.setText(p.getValoracion().toString());
+            viewHolder.ratingBar.getNumStars();
 
 
             row.setTag(viewHolder);
