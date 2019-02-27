@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, EdicionActivity.class));
     }
 
-    public void clickImagen(View view) {
+    public void clicImagen(View view) {
+        startActivity(new Intent(getApplicationContext(), MapaActivity.class));
     }
 }
