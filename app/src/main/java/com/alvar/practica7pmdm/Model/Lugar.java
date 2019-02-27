@@ -9,7 +9,7 @@ public class Lugar {
     private Float valoracion;
     private Integer categoria;
 
-    public Lugar() {
+    public Lugar(Long dataId, Float dataLatitud, Float dataLongitud, String dataNombre, String dataComentarios, Float dataValoracion, Integer dataCategoria) {
         this.id = null;
         this.latitud=0.0f;
         this.longitud=0.0f;

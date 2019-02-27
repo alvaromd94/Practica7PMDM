@@ -22,7 +22,7 @@ public class Esquema {
         public static final String COLUMN_TYPE_LATITUD = "FLOAT";
         public static final String COLUMN_TYPE_LONGITUD = "FLOAT";
         public static final String COLUMN_TYPE_NOMBRE = "TEXT";
-        public static final String COLUMN_TYPE_COMENTARIOS = "INTEGER";
+        public static final String COLUMN_TYPE_COMENTARIOS = "TEXT";
         public static final String COLUMN_TYPE_VALORACION = "FLOAT";
         public static final String COLUMN_TYPE_CATEGORIA = "INT";
 
