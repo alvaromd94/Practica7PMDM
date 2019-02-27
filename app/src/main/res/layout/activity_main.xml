@@ -48,7 +48,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="clickNuevo"
+        android:onClick="clicNuevo"
         android:src="@android:drawable/ic_menu_add"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp" />
