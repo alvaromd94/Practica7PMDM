@@ -18,7 +18,6 @@ public class CardAdapter extends ArrayAdapter {
 
     static class CardViewHolder {
         TextView line1;
-        RatingBar ratingBar;
     }
 
     public CardAdapter(Context context, int textViewResourceId) {
@@ -47,20 +46,14 @@ public class CardAdapter extends ArrayAdapter {
         if (row == null) {
             LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(R.layout.list_item_card, parent, false);
-
             CardViewHolder viewHolder = new CardViewHolder();
             viewHolder.line1 = row.findViewById(R.id.line1);
-           // viewHolder.line2 = row.findViewById(R.id.line2);
-            viewHolder.ratingBar = row.findViewById(R.id.ratingBar);
-
             Lugar p = getItem(position);
             viewHolder.line1.setText(p.getNombre());
-            viewHolder.ratingBar.getNumStars();
-
-
+            RatingBar ratingBar = row.findViewById(R.id.ratingBar);
+            ratingBar.setRating(p.getValoracion());
             row.setTag(viewHolder);
         }
         return row;
     }
-
 }

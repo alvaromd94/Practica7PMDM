@@ -10,5 +10,5 @@ public class App {
 
     public static int accion;
 
-    public static Lugar productoActivo;
+    public static Lugar lugarActivo;
 }
