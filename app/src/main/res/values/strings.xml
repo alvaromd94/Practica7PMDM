@@ -7,4 +7,5 @@
     <string name="borrar">Eliminar</string>
     <string name="guardar">Guardar</string>
     <string name="Nombre">Nombre:</string>
+    <string name="categoria">Categoría:</string>
 </resources>
