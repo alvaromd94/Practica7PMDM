@@ -8,8 +8,8 @@
     <string name="guardar">Guardar</string>
     <string name="Nombre">Nombre:</string>
     <string name="categoria">Categoría:</string>
-    <string name="longitud">Longitud</string>
-    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud:</string>
+    <string name="latitud">Latitud:</string>
     <string name="valoracion">Valoración:</string>
     <string name="comentarios">Comentarios:</string>
 </resources>
