@@ -10,4 +10,5 @@
     <string name="categoria">Categoría:</string>
     <string name="longitud">Longitud</string>
     <string name="latitud">Latitud</string>
+    <string name="valoracion">Valoración:</string>
 </resources>
