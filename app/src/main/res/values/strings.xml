@@ -5,4 +5,5 @@
     <string name="title_activity_mapa">Lugares</string>
     <string name="editar">Editar</string>
     <string name="borrar">Eliminar</string>
+    <string name="guardar">Guardar</string>
 </resources>
