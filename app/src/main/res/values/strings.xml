@@ -3,4 +3,6 @@
     <string name="edicion">Edición</string>
     <string name="informacion">Información</string>
     <string name="title_activity_mapa">Lugares</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">Eliminar</string>
 </resources>
