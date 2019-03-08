@@ -5,19 +5,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.alvar.practica7pmdm.Logic.LogicLugar;
 import com.alvar.practica7pmdm.Model.Lugar;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     public ListView listView;
-
+    Spinner spinnerCategorias;
     private static List<Lugar> lstLugar;
 
     @Override
@@ -25,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageView imageView = findViewById(R.id.imageView);
+
+        spinnerCategorias = findViewById(R.id.spinnerCategorias);
+        ArrayAdapter adaptador = ArrayAdapter.createFromResource(this, R.array.spinner, R.layout.support_simple_spinner_dropdown_item);
+        final Spinner spinnerCategorias = findViewById(R.id.spinnerCategorias);
+        spinnerCategorias.setAdapter(adaptador);
 
         listView = findViewById(R.id.card_listView);
         listView.addHeaderView(new View(this)); // añade espacio arriba de la primera card
@@ -34,6 +40,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MapaActivity.class));
+/*
+         spinnerCategorias = findViewById(R.id.spinnerCategorias);
+                List<String> list = new ArrayList<String>();
+                list.add(getResources().getString(R.string.bares));
+                list.add(getResources().getString(R.string.restaurantes));
+                list.add(getResources().getString(R.string.discotecas));
+                list.add(getResources().getString(R.string.boleras));
+                list.add(getResources().getString(R.string.cines));
+                list.add(getResources().getString(R.string.todos));
+                final int listsize = list.size();
+*/
+
             }
         });
 

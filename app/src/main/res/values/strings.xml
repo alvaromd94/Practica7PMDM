@@ -8,6 +8,19 @@
     <string name="guardar">Guardar</string>
     <string name="Nombre">Nombre:</string>
     <string name="categoria">Categoría:</string>
+    <string name="bares">Bares:</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="discotecas">Discotecas</string>
+    <string name="boleras">Boleras</string>
+    <string name="cines">Cines</string>
+    <string name="todos">TODOS</string>
+    <string-array name="spinner">
+        <item>Restaurantes</item>
+        <item>Discotecas</item>
+        <item>Boleras</item>
+        <item>Cines</item>
+        <item>TODOS</item>
+    </string-array>
     <string name="longitud">Longitud:</string>
     <string name="latitud">Latitud:</string>
     <string name="valoracion">Valoración:</string>
