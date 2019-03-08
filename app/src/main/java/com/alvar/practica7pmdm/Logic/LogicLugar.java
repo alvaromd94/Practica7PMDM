@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Spinner;
 
 import com.alvar.practica7pmdm.DataBaseManager.DB_SQLite;
 import com.alvar.practica7pmdm.DataBaseManager.Esquema;
@@ -75,5 +76,31 @@ public class LogicLugar {
         DB_SQLite.desconectar(conn);
         return lug;
     }
+    public static List listaLugares2(Context context, Spinner spinner) {
+        List lug = new ArrayList<>();
+        String[] sqlFields = {Esquema.Lugar.COLUMN_NAME_ID, Esquema.Lugar.COLUMN_NAME_NOMBRE, Esquema.Lugar.COLUMN_NAME_LATITUD, Esquema.Lugar.COLUMN_NAME_LONGITUD, Esquema.Lugar.COLUMN_NAME_COMENTARIOS, Esquema.Lugar.COLUMN_NAME_VALORACION, Esquema.Lugar.COLUMN_NAME_CATEGORIA};
+        String sqlWhere = "categoria=" + spinner.getSelectedItemPosition();
+        String sqlOrderBy = Esquema.Lugar.COLUMN_NAME_NOMBRE + " ASC";
 
+        SQLiteDatabase conn = DB_SQLite.conectar(context, DB_SQLite.OPEN_MODE_READ);
+        Cursor cursor = conn.query(Esquema.Lugar.TABLE_NAME, sqlFields, sqlWhere, null, null, null, sqlOrderBy);
+        if (cursor.getCount() == 0) {
+            lug = null;
+        } else {
+            cursor.moveToFirst();
+            do {
+                Long dataId = cursor.getLong(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_ID));
+                Float dataLatitud = cursor.getFloat(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_LATITUD));
+                Float dataLongitud = cursor.getFloat(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_LONGITUD));
+                String dataNombre = cursor.getString(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_NOMBRE));
+                String dataComentarios = cursor.getString(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_COMENTARIOS));
+                Float dataValoracion = cursor.getFloat(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_VALORACION));
+                int dataCategoria = cursor.getInt(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_CATEGORIA));
+                lug.add(new Lugar(dataId, dataLatitud, dataLongitud,dataNombre, dataComentarios, dataValoracion, dataCategoria));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        DB_SQLite.desconectar(conn);
+        return lug;
+    }
 }

@@ -17,16 +17,16 @@
         android:layout_marginEnd="70dp"
         android:entries="@array/categorias" />
 
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="61dp"
+        android:layout_width="48dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/spinnerCategorias"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="-68dp"
-        app:srcCompat="@android:drawable/ic_menu_mapmode" />
-
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="325dp"
+        android:layout_marginEnd="23dp"
+        app:srcCompat="@drawable/planeta" />
 
     <ListView
         android:id="@+id/card_listView"
