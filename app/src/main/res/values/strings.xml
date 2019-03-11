@@ -8,7 +8,7 @@
     <string name="guardar">Guardar</string>
     <string name="Nombre">Nombre:</string>
     <string name="categoria">Categoría:</string>
-    <string name="bares">Bares:</string>
+    <string name="bares">Bares</string>
     <string name="restaurantes">Restaurantes</string>
     <string name="discotecas">Discotecas</string>
     <string name="boleras">Boleras</string>
@@ -37,4 +37,9 @@
     <string name="ok">OK</string>
     <string name="cancelar">Cancelar</string>
     <string name="si">Sí</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="confirmareliminar">¿Desea eliminar esta información?</string>
+    <string name="eliminarInformacion">Eliminar Información</string>
+    <string name="toastEliminado">Eliminado de forma correcta</string>
+
 </resources>

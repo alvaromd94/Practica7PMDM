@@ -19,27 +19,28 @@ public class MainActivity extends AppCompatActivity {
 
     public ListView listView;
     Spinner spinnerCategorias;
+    ImageView imageView;
     private static List<Lugar> lstLugar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.imageView);
 
         spinnerCategorias = findViewById(R.id.spinnerCategorias);
         ArrayAdapter adaptador = ArrayAdapter.createFromResource(this, R.array.spinner, R.layout.support_simple_spinner_dropdown_item);
         final Spinner spinnerCategorias = findViewById(R.id.spinnerCategorias);
         spinnerCategorias.setAdapter(adaptador);
 
-        listView = findViewById(R.id.card_listView);
-        listView.addHeaderView(new View(this)); // añade espacio arriba de la primera card
-        listView.addFooterView(new View(this)); // añade espacio debajo de la última card
+
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MapaActivity.class));
+
+
 /*
          spinnerCategorias = findViewById(R.id.spinnerCategorias);
                 List<String> list = new ArrayList<String>();
@@ -54,10 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
+        listView = findViewById(R.id.card_listView);
+        listView.addHeaderView(new View(this)); // añade espacio arriba de la primera card
+        listView.addFooterView(new View(this)); // añade espacio debajo de la última card
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         lstLugar = LogicLugar.listaLugares(this);
         if (lstLugar == null) {
-            Toast.makeText(this, "La base de datos está vacía.", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(this, "La base de datos está vacía.", Toast.LENGTH_LONG).show();
         } else {
             for (Lugar p : lstLugar) {
                 listadoDeCards.add(p);
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
     public void clicNuevo(View view) {
         App.lugarActivo = new Lugar();
         App.accion = App.INSERTAR;
+        App.SALIDA=2;
         startActivity(new Intent(this, EdicionActivity.class));
     }
 

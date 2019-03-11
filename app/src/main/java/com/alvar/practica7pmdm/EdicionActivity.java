@@ -143,7 +143,7 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
                 App.lugarActivo.setValoracion(rbEdicion.getRating());
                 App.lugarActivo.setCategoria(spinnerCategoria.getSelectedItemPosition()+1);
                 LogicLugar.editarLugar(this, App.lugarActivo );
-                Toast.makeText(this, getResources().getString(R.string.toastEditado), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.toastEditado), Toast.LENGTH_LONG).show();
                 finish();
             }
             else
@@ -155,7 +155,7 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
                 App.lugarActivo.setValoracion(rbEdicion.getRating());
                 App.lugarActivo.setCategoria(spinnerCategoria.getSelectedItemPosition()+1);
                 LogicLugar.insertarLugar(this, App.lugarActivo );
-                Toast.makeText(this, getResources().getString(R.string.toastCreado), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.toastCreado), Toast.LENGTH_LONG).show();
                 finish();
             }
         }

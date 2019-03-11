@@ -22,9 +22,10 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtNombre"
+            android:id="@+id/txtNombre1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:textSize="24sp" />
     </LinearLayout>
@@ -43,9 +44,10 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtCategoria"
+            android:id="@+id/txtCategoria1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:textSize="24sp" />
     </LinearLayout>
@@ -64,9 +66,10 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtLatitud"
+            android:id="@+id/txtLatitud1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:textSize="24sp" />
 
@@ -78,9 +81,10 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtLongitud"
+            android:id="@+id/txtLongitud1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:textSize="24sp" />
     </LinearLayout>
@@ -100,9 +104,10 @@
             android:textSize="23sp" />
 
         <RatingBar
-            android:id="@+id/ratingBarInformacion"
+            android:id="@+id/rbInformacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:isIndicator="true"
             android:numStars="5"
             android:scaleX=".5"
             android:scaleY=".5" />
@@ -121,12 +126,13 @@
             android:text="@string/comentarios"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/editTextComentarios"
+        <TextView
+            android:id="@+id/txtComentarios1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:ems="10"
+            android:layout_marginTop="10dp"
             android:gravity="top"
+            android:textSize="20sp"
             android:inputType="textMultiLine" />
     </LinearLayout>
 
