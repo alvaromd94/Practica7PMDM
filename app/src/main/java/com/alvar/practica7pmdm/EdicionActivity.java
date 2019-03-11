@@ -80,11 +80,11 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
             @Override
             public void onClick(View v) {
                 if (!isGPS && !isNetwork) {
-                    Log.i(TAG, "Conexión OFF");
+                    Log.i(TAG, getResources().getString(R.string.conexionoff));
                     showSettingsAlert();
                     getLastLocation();
                 } else {
-                    Log.i(TAG, "Conexión ON");
+                    Log.i(TAG, getResources().getString(R.string.conexionon));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (permissionsToRequest.size() > 0) {
                             requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]), ALL_PERMISSIONS_RESULT);
@@ -251,7 +251,7 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
                 if (permissionsRejected.size() > 0) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (shouldShowRequestPermissionRationale(permissionsRejected.get(0))) {
-                            showMessageOKCancel("Se requiere permisos para ejecutar la aplicación.",
+                            showMessageOKCancel(getResources().getString(R.string.permisos),
                                     new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -261,7 +261,8 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
                             return;
                         }
                     }
-                } else {
+                } else
+                    {
                     canGetLocation = true;
                     getLocation();
                 }
@@ -270,14 +271,14 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
     }
     public void showSettingsAlert() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setTitle("El GPS no está activado");
-        alertDialog.setMessage("¿Quieres activar el GPS?");
-        alertDialog.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+        alertDialog.setTitle(getResources().getString(R.string.gpsNo));
+        alertDialog.setMessage(getResources().getString(R.string.activarGPS));
+        alertDialog.setPositiveButton(getResources().getString(R.string.si), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
             }
         });
-        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }
@@ -288,8 +289,8 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(this)
                 .setMessage(message)
-                .setPositiveButton("OK", okListener)
-                .setNegativeButton("Cancel", null)
+                .setPositiveButton(getResources().getString(R.string.ok), okListener)
+                .setNegativeButton(getResources().getString(R.string.cancelar), null)
                 .create()
                 .show();
     }
