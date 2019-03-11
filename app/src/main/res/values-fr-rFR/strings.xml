@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mis Lugares Favoritos</string>
+    <string name="edicion">Nouveau / Edition</string>
+    <string name="informacion">Les informations</string>
+    <string name="title_activity_mapa">Endroits</string>
+    <string name="editar">Éditer</string>
+    <string name="borrar">Supprimer</string>
+    <string name="guardar">Sauvegarder</string>
+    <string name="Nombre">Nom:</string>
+    <string name="categoria">Catégorie:</string>
+    <string name="bares">Bars</string>
+    <string name="restaurantes">Restaurants</string>
+    <string name="discotecas">Clubs</string>
+    <string name="boleras">Bowling</string>
+    <string name="cines">Cinémas</string>
+    <string name="longitud">"Longueur: "</string>
+    <string name="latitud">Latitude:</string>
+    <string name="valoracion">Évaluation:</string>
+    <string name="comentarios">Commentaires:</string>
+    <string name="toastEditado">Produit correctement</string>
+    <string name="toastCreado">Créé correctement</string>
+    <string name="conexionoff">Connexion OFF</string>
+    <string name="conexionon">Connexion ON</string>
+    <string name="permisos">Des autorisations sont nécessaires pour exécuter l\'application</string>
+    <string name="gpsNo">GPS n\'est pas activé</string>
+    <string name="activarGPS">Voulez-vous activer le GPS?</string>
+    <string name="cancelar">Annuler</string>
+    <string name="si">Oui</string>
+    <string name="eliminar">Supprimer</string>
+    <string name="confirmareliminar">Voulez-vous supprimer cette information?</string>
+    <string name="eliminarInformacion">Supprimer des informations</string>
+    <string name="toastEliminado">Supprimé correctement</string>
+    <string name="todos">Tout</string>
+</resources>

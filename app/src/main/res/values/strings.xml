@@ -28,13 +28,13 @@
     <string name="comentarios">Comentarios:</string>
     <string name="toastEditado">Editado de forma correcta</string>
     <string name="toastCreado">Creado de forma correcta</string>
-    <string name="conexionoff">Comexión OFF</string>
+    <string name="conexionoff">Conexión OFF</string>
     <string name="conexionon">Conexión ON</string>
     <string name="permisos">Se requiere permisos para ejecutar la aplicación</string>
     <string name="gpsNo">El GPS no está activado</string>
     <string name="activarGPS">¿Quieres activar el GPS?</string>
-    <string name="no">No</string>
-    <string name="ok">OK</string>
+    <string name="no" translatable="false">No</string>
+    <string name="ok" translatable="false">OK</string>
     <string name="cancelar">Cancelar</string>
     <string name="si">Sí</string>
     <string name="eliminar">Eliminar</string>

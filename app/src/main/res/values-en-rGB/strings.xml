@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mis Lugares Favoritos</string>
+    <string name="edicion">New / Edition</string>
+    <string name="informacion">Information</string>
+    <string name="title_activity_mapa">Places</string>
+    <string name="editar">Edit</string>
+    <string name="borrar">Remove</string>
+    <string name="guardar">Save</string>
+    <string name="Nombre">Name:</string>
+    <string name="categoria">Category:</string>
+    <string name="bares">Bar</string>
+    <string name="restaurantes">Restaurants</string>
+    <string name="discotecas">Nigth-clubs</string>
+    <string name="boleras">Bowling</string>
+    <string name="cines">Cinemas</string>
+    <string name="longitud">" Longitude"</string>
+    <string name="latitud">Latitude:</string>
+    <string name="valoracion">Assessment:</string>
+    <string name="comentarios">Comments:</string>
+    <string name="toastEditado">Produced correctly</string>
+    <string name="toastCreado">Created correctly</string>
+    <string name="conexionoff">Connection OFF</string>
+    <string name="conexionon">Connection ON</string>
+    <string name="permisos">Permissions are required to run the application</string>
+    <string name="gpsNo">GPS is not activated</string>
+    <string name="activarGPS">Do you want to activate GPS?</string>
+    <string name="cancelar">Cancel</string>
+    <string name="si">Yes</string>
+    <string name="eliminar">Remove</string>
+    <string name="confirmareliminar">Do you want to delete this information?</string>
+    <string name="eliminarInformacion">Delete information</string>
+    <string name="toastEliminado">Deleted correctly</string>
+    <string name="todos">All</string>
+</resources>
