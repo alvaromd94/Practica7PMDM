@@ -18,9 +18,9 @@ public class DB_SQLite extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + Lugar.TABLE_NAME + " (" +
                     Lugar.COLUMN_NAME_ID + " " + Lugar.COLUMN_TYPE_ID + " PRIMARY KEY AUTOINCREMENT, " +
+                    Lugar.COLUMN_NAME_NOMBRE + " " + Lugar.COLUMN_TYPE_NOMBRE + "," +
                     Lugar.COLUMN_NAME_LATITUD + " " + Lugar.COLUMN_TYPE_LATITUD + "," +
                     Lugar.COLUMN_NAME_LONGITUD + " " + Lugar.COLUMN_TYPE_LONGITUD + "," +
-                    Lugar.COLUMN_NAME_NOMBRE + " " + Lugar.COLUMN_TYPE_NOMBRE + "," +
                     Lugar.COLUMN_NAME_COMENTARIOS + " " + Lugar.COLUMN_TYPE_COMENTARIOS +  "," +
                     Lugar.COLUMN_NAME_VALORACION + " " + Lugar.COLUMN_TYPE_VALORACION + "," +
                     Lugar.COLUMN_NAME_CATEGORIA + " " + Lugar.COLUMN_TYPE_CATEGORIA + ")";

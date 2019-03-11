@@ -15,6 +15,7 @@
     <string name="cines">Cines</string>
     <string name="todos">TODOS</string>
     <string-array name="spinner">
+        <item>Bares</item>
         <item>Restaurantes</item>
         <item>Discotecas</item>
         <item>Boleras</item>
@@ -25,4 +26,6 @@
     <string name="latitud">Latitud:</string>
     <string name="valoracion">Valoración:</string>
     <string name="comentarios">Comentarios:</string>
+    <string name="toastEditado">Editado de forma correcta</string>
+    <string name="toastCreado">Creado de forma correcta</string>
 </resources>

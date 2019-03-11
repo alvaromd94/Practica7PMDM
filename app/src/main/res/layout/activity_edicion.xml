@@ -22,11 +22,11 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textPersonName|textCapWords"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -82,14 +82,14 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextLatitud"
+            android:id="@+id/txtLatitud"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextLongitud"
+            android:id="@+id/txtLongitud"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="90dp"
@@ -121,7 +121,7 @@
             android:textSize="22sp" />
 
         <RatingBar
-            android:id="@+id/ratingBarEdicion"
+            android:id="@+id/rbEdicion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
@@ -143,7 +143,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/txtComentarios"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"

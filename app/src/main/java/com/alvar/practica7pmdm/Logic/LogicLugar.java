@@ -17,10 +17,10 @@ public class LogicLugar {
 
     public static void insertarLugar(Context context, Lugar p) {
         ContentValues content = new ContentValues();
-        content.put(Esquema.Lugar.COLUMN_NAME_LATITUD, p.getNombre());
-        content.put(Esquema.Lugar.COLUMN_NAME_LONGITUD, p.getNombre());
         content.put(Esquema.Lugar.COLUMN_NAME_NOMBRE, p.getNombre());
-        content.put(Esquema.Lugar.COLUMN_NAME_COMENTARIOS, p.getCometarios());
+        content.put(Esquema.Lugar.COLUMN_NAME_LATITUD, p.getLatitud());
+        content.put(Esquema.Lugar.COLUMN_NAME_LONGITUD, p.getLongitud());
+        content.put(Esquema.Lugar.COLUMN_NAME_COMENTARIOS, p.getComentarios());
         content.put(Esquema.Lugar.COLUMN_NAME_VALORACION, p.getValoracion());
         content.put(Esquema.Lugar.COLUMN_NAME_CATEGORIA, p.getCategoria());
         SQLiteDatabase conn = DB_SQLite.conectar(context, DB_SQLite.OPEN_MODE_WRITE);
@@ -37,10 +37,10 @@ public class LogicLugar {
 
     public static void editarLugar(Context context, Lugar p) {
         ContentValues content = new ContentValues();
-        content.put(Esquema.Lugar.COLUMN_NAME_LATITUD, p.getNombre());
-        content.put(Esquema.Lugar.COLUMN_NAME_LONGITUD, p.getNombre());
         content.put(Esquema.Lugar.COLUMN_NAME_NOMBRE, p.getNombre());
-        content.put(Esquema.Lugar.COLUMN_NAME_COMENTARIOS, p.getCometarios());
+        content.put(Esquema.Lugar.COLUMN_NAME_LATITUD, p.getLatitud());
+        content.put(Esquema.Lugar.COLUMN_NAME_LONGITUD, p.getLongitud());
+        content.put(Esquema.Lugar.COLUMN_NAME_COMENTARIOS, p.getComentarios());
         content.put(Esquema.Lugar.COLUMN_NAME_VALORACION, p.getValoracion());
         content.put(Esquema.Lugar.COLUMN_NAME_CATEGORIA, p.getCategoria());
         String sqlWhere = Esquema.Lugar.COLUMN_NAME_ID + " = " + p.getId();
@@ -63,13 +63,13 @@ public class LogicLugar {
             cursor.moveToFirst();
             do {
                 Long dataId = cursor.getLong(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_ID));
+                String dataNombre = cursor.getString(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_NOMBRE));
                 Float dataLatitud = cursor.getFloat(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_LATITUD));
                 Float dataLongitud = cursor.getFloat(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_LONGITUD));
-                String dataNombre = cursor.getString(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_NOMBRE));
                 String dataComentarios = cursor.getString(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_COMENTARIOS));
                 Float dataValoracion = cursor.getFloat(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_VALORACION));
                 Integer dataCategoria = cursor.getInt(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_CATEGORIA));
-                lug.add(new Lugar(dataId,dataLatitud, dataLongitud, dataNombre, dataComentarios, dataValoracion, dataCategoria));
+                lug.add(new Lugar(dataId,dataNombre,dataLatitud, dataLongitud,  dataComentarios, dataValoracion, dataCategoria));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -96,7 +96,7 @@ public class LogicLugar {
                 String dataComentarios = cursor.getString(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_COMENTARIOS));
                 Float dataValoracion = cursor.getFloat(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_VALORACION));
                 int dataCategoria = cursor.getInt(cursor.getColumnIndex(Esquema.Lugar.COLUMN_NAME_CATEGORIA));
-                lug.add(new Lugar(dataId, dataLatitud, dataLongitud,dataNombre, dataComentarios, dataValoracion, dataCategoria));
+                lug.add(new Lugar(dataId, dataNombre,dataLatitud, dataLongitud, dataComentarios, dataValoracion, dataCategoria));
             } while (cursor.moveToNext());
         }
         cursor.close();
