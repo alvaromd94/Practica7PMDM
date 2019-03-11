@@ -29,32 +29,46 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
 
         spinnerCategorias = findViewById(R.id.spinnerCategorias);
-        ArrayAdapter adaptador = ArrayAdapter.createFromResource(this, R.array.spinner, R.layout.support_simple_spinner_dropdown_item);
-        final Spinner spinnerCategorias = findViewById(R.id.spinnerCategorias);
-        spinnerCategorias.setAdapter(adaptador);
-
-
+        List<String> list = new ArrayList<String>();
+        list.add(getResources().getString(R.string.todos));
+        list.add(getResources().getString(R.string.bares));
+        list.add(getResources().getString(R.string.restaurantes));
+        list.add(getResources().getString(R.string.discotecas));
+        list.add(getResources().getString(R.string.boleras));
+        list.add(getResources().getString(R.string.cines));
+        final int listsize = list.size();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, list) {
+            @Override
+            public int getCount() {
+                return(listsize); // Truncate the list
+            }
+        };
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategorias.setAdapter(dataAdapter);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MapaActivity.class));
+            }
+        });
 
+        spinnerCategorias.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (spinnerCategorias.getSelectedItem().toString()==getResources().getString(R.string.todos)){
+                    mostrarTodos();
+                }else{
+                    mostrarUno();
+                }
+            }
 
-/*
-         spinnerCategorias = findViewById(R.id.spinnerCategorias);
-                List<String> list = new ArrayList<String>();
-                list.add(getResources().getString(R.string.bares));
-                list.add(getResources().getString(R.string.restaurantes));
-                list.add(getResources().getString(R.string.discotecas));
-                list.add(getResources().getString(R.string.boleras));
-                list.add(getResources().getString(R.string.cines));
-                list.add(getResources().getString(R.string.todos));
-                final int listsize = list.size();
-*/
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
+
         listView = findViewById(R.id.card_listView);
         listView.addHeaderView(new View(this)); // añade espacio arriba de la primera card
         listView.addFooterView(new View(this)); // añade espacio debajo de la última card
@@ -71,18 +85,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume()
+    {
         super.onResume();
-        CardAdapter listadoDeCards = new CardAdapter(getApplicationContext(), R.layout.list_item_card);
-
-        lstLugar = LogicLugar.listaLugares(this);
-        if (lstLugar == null) {
-          //  Toast.makeText(this, "La base de datos está vacía.", Toast.LENGTH_LONG).show();
-        } else {
-            for (Lugar p : lstLugar) {
-                listadoDeCards.add(p);
-            }
-            listView.setAdapter(listadoDeCards);
+        if(spinnerCategorias.getSelectedItem().toString() == getResources().getString(R.string.todos))
+        {
+            mostrarTodos();
+        }
+        else
+        {
+            mostrarUno();
         }
     }
 
@@ -92,6 +104,29 @@ public class MainActivity extends AppCompatActivity {
         App.SALIDA=2;
         startActivity(new Intent(this, EdicionActivity.class));
     }
-
-
+    public void mostrarUno() {
+        CardAdapter listadoDeCards = new CardAdapter(getApplicationContext(), R.layout.list_item_card);
+        lstLugar = LogicLugar.listaLugares2(this, spinnerCategorias);
+        if (lstLugar == null) {
+            listView.setAdapter(null);
+        } else {
+            for (Lugar p : lstLugar) {
+                listadoDeCards.add(p);
+            }
+            listView.setAdapter(listadoDeCards);
+        }
+    }
+    public void mostrarTodos()
+    {
+        CardAdapter listadoDeCards = new CardAdapter(getApplicationContext(), R.layout.list_item_card);
+        lstLugar= LogicLugar.listaLugares(this);
+        if (lstLugar == null) {
+            listView.setAdapter(null);
+        } else {
+            for (Lugar p : lstLugar) {
+                listadoDeCards.add(p);
+            }
+            listView.setAdapter(listadoDeCards);
+        }
+    }
 }
