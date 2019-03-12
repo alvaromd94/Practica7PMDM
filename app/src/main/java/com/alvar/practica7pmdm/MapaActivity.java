@@ -3,6 +3,7 @@ package com.alvar.practica7pmdm;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.alvar.practica7pmdm.Logic.LogicLugar;
 import com.alvar.practica7pmdm.Model.Lugar;
@@ -16,6 +17,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
+
+import static com.alvar.practica7pmdm.App.lugar3;
 
 public class MapaActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -45,34 +48,43 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
     public boolean onMarkerClick(final Marker marker) {
         if (marker.equals(marker))
         {
+
+            String cadena = marker.getSnippet();
+            String cadena1[] = cadena.split(",");
+            String latitud  = cadena1[0];
+            String longitud = cadena1 [1];
+            Lugar p = LogicLugar.listaLugares4(this, latitud, longitud);
+            App.lugarActivo=p;
+
             Intent intent=new Intent(this,InformacionActivity.class);
             startActivity(intent);
+
+
         }
 
         return false;
     }
 
     public void mostrarTodos() {
-        List<Lugar> lstLugar = LogicLugar.listaLugares(this);
-        if (lstLugar == null) {
-        } else {
+        float colorIcono []={0f, 60f, 120f, 180f, 240f, 320f};
 
+        if(lugar3==0)
+        {
+            List<Lugar> lstLugar = LogicLugar.listaLugares(this);
             for (Lugar p : lstLugar) {
                 nuevaPosicion = new LatLng(p.getLatitud(), p.getLongitud());
-                if (p.getCategoria() == 1) {
-                    mMap.addMarker(new MarkerOptions().position(nuevaPosicion).title(p.getNombre()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-                } else if (p.getCategoria() == 2) {
-                    mMap.addMarker(new MarkerOptions().position(nuevaPosicion).title(p.getNombre()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                } else if (p.getCategoria() == 3) {
-                    mMap.addMarker(new MarkerOptions().position(nuevaPosicion).title(p.getNombre()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                }
-                else if (p.getCategoria() == 4) {
-                    mMap.addMarker(new MarkerOptions().position(nuevaPosicion).title(p.getNombre()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE)));
-                }
-                else if (p.getCategoria() == 5) {
-                    mMap.addMarker(new MarkerOptions().position(nuevaPosicion).title(p.getNombre()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-                }
+                mMap.addMarker(new MarkerOptions().position(nuevaPosicion).snippet(p.getLatitud()+ ","+ p.getLongitud()).title(p.getNombre()).icon(BitmapDescriptorFactory.defaultMarker(colorIcono[p.getCategoria()])));
+            }
+        }
+        else
+        {
+            List<Lugar> lstLugar = LogicLugar.listaLugares3(this, App.lugar3);
+            for (Lugar p : lstLugar)
+            {
+                nuevaPosicion=new LatLng(p.getLatitud(),p.getLongitud());
+                mMap.addMarker(new MarkerOptions().position(nuevaPosicion).snippet(p.getLatitud()+ ","+ p.getLongitud()).title(p.getNombre()).icon(BitmapDescriptorFactory.defaultMarker(colorIcono[p.getCategoria()])));
             }
         }
     }
-}
+    }
+

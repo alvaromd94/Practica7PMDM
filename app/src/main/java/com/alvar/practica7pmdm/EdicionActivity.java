@@ -137,8 +137,8 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
             if(App.SALIDA==1)
             {
                 App.lugarActivo.setNombre(txtNombre.getText().toString());
-                App.lugarActivo.setLatitud(Float.parseFloat(txtLatitud.getText().toString()));
-                App.lugarActivo.setLongitud(Float.parseFloat(txtLongitud.getText().toString()));
+                App.lugarActivo.setLatitud(Double.parseDouble(txtLatitud.getText().toString()));
+                App.lugarActivo.setLongitud(Double.parseDouble(txtLongitud.getText().toString()));
                 App.lugarActivo.setComentarios(txtComentarios.getText().toString());
                 App.lugarActivo.setValoracion(rbEdicion.getRating());
                 App.lugarActivo.setCategoria(spinnerCategoria.getSelectedItemPosition()+1);
@@ -149,8 +149,8 @@ public class EdicionActivity extends AppCompatActivity implements LocationListen
             else
             {
                 App.lugarActivo.setNombre(txtNombre.getText().toString());
-                App.lugarActivo.setLatitud(Float.parseFloat(txtLatitud.getText().toString()));
-                App.lugarActivo.setLongitud(Float.parseFloat(txtLongitud.getText().toString()));
+                App.lugarActivo.setLatitud(Double.parseDouble(txtLatitud.getText().toString()));
+                App.lugarActivo.setLongitud(Double.parseDouble(txtLongitud.getText().toString()));
                 App.lugarActivo.setComentarios(txtComentarios.getText().toString());
                 App.lugarActivo.setValoracion(rbEdicion.getRating());
                 App.lugarActivo.setCategoria(spinnerCategoria.getSelectedItemPosition()+1);

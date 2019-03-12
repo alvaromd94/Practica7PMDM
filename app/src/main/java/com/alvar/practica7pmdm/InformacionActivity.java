@@ -28,14 +28,19 @@ public class InformacionActivity extends AppCompatActivity {
         TextView txtCategoria1 = findViewById(R.id.txtCategoria1);
         TextView txtComentarios1 = findViewById(R.id.txtComentarios1);
         RatingBar rbInformacion = findViewById(R.id.rbInformacion);
+    if(App.lugarActivo==null)
+    {
 
+    }
+    else
+    {
         txtNombre1.setText(App.lugarActivo.getNombre());
         txtLatitud1.setText(App.lugarActivo.getLatitud().toString());
         txtLongitud1.setText(App.lugarActivo.getLongitud().toString());
         txtCategoria1.setText(App.getListCategorias(this).get(App.lugarActivo.getCategoria() - 1));
         txtComentarios1.setText(App.lugarActivo.getComentarios());
         rbInformacion.setRating(App.lugarActivo.getValoracion());
-
+    }
     }
 
     @Override

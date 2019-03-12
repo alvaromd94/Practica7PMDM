@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MapaActivity.class));
+                App.lugar3 =(int) (long) spinnerCategorias.getSelectedItemId();
             }
         });
 
