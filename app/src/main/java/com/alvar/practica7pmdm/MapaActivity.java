@@ -3,8 +3,6 @@ package com.alvar.practica7pmdm;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.util.Log;
-
 import com.alvar.practica7pmdm.Logic.LogicLugar;
 import com.alvar.practica7pmdm.Model.Lugar;
 import com.google.android.gms.maps.CameraUpdateFactory;
